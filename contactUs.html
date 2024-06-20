@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .main-div {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #b0d2ef;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        body.dark-mode .main-div {
+            background-color: #1e1e1e;
+        }
+        .display-mode {
+            justify-content: flex-start;
+            bottom: 90%;
+            left: 10%;
+            transform: translate(-70%, -80%);
+        }
+        .display-mode i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .contactUs {
+            background-color: white;
+            width: 100%;
+            padding: 20px 30px;
+            max-width: 400px;
+            text-align: center;
+        }
+        body.dark-mode .contactUs {
+            background-color: #333333;
+        }
+        .form-groups {
+            margin: 10px;
+            color: #000;
+        }
+        body.dark-mode .form-groups {
+            color: #ffffff;
+        }
+        .form-groups label {
+            display: block;
+            text-align: start;
+            margin-bottom: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 17px;
+        }
+        .form-groups input, .form-groups textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 2px;
+            border-color: rgb(69, 70, 71);
+        }
+        button {
+            background-color: rgb(15, 134, 238);
+            padding: 10px;
+            width: 40%;
+            color: white;
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            border: 2px solid rgb(15, 134, 238);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div" id="main-div">
+        <div class="display-mode" id="display-mode" onclick="darkMode()">
+            <i class="ri-moon-line" id="toggledarkMode"></i>
+        </div>
+        <div class="contactUs" id="contactUs">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-groups">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-groups">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" required>
+                </div>
+                <div class="form-groups">
+                    <label for="phnumber">Phone Number</label>
+                    <input type="text" name="phnumber" id="phnumber" required>
+                </div>
+                <div class="form-groups">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="8" cols="30" required></textarea>
+                </div>
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function darkMode() {
+            const body = document.body;
+            const toggledarkMode = document.getElementById('toggledarkMode');
+            body.classList.toggle('dark-mode');
+            toggledarkMode.classList.toggle('ri-moon-line');
+            toggledarkMode.classList.toggle('ri-moon-fill');
+        }
+    </script>
+</body>
+</html>
